@@ -1,22 +1,23 @@
 // app/api/orders/[id]/route.ts
-import { NextRequest, NextResponse } from 'next/server';
-import { getOrders } from '@/lib/store';
+import { NextRequest, NextResponse } from "next/server";
+import { getOrderById } from "@/lib/store";
 
 export async function GET(
-  request: NextRequest,
-  { params }: { params: Promise<{ id: string }> }
+  _req: NextRequest,
+  { params }: { params: Promise<{ id: string }> },
 ) {
   try {
     const { id } = await params;
-    const decodedId = decodeURIComponent(id);
-    const order = getOrders().find(o => o.id === decodedId);
-    
+    const order = await getOrderById(id);
     if (!order) {
-      return NextResponse.json({ error: 'Order not found' }, { status: 404 });
+      return NextResponse.json({ error: "Order not found" }, { status: 404 });
     }
-    
-    return NextResponse.json(order, { status: 200 });
+    return NextResponse.json(order);
   } catch (error) {
-    return NextResponse.json({ error: 'Failed to find order' }, { status: 500 });
+    console.error("GET /api/orders/[id] error:", error);
+    return NextResponse.json(
+      { error: "Failed to fetch order" },
+      { status: 500 },
+    );
   }
 }

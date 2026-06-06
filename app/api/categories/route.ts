@@ -1,12 +1,16 @@
 // app/api/categories/route.ts
-import { NextResponse } from 'next/server';
-import { getCategories } from '@/lib/store';
+import { NextResponse } from "next/server";
+import { getCategories } from "@/lib/store";
 
 export async function GET() {
   try {
-    const categories = getCategories();
-    return NextResponse.json(categories, { status: 200 });
+    const categories = await getCategories();
+    return NextResponse.json(categories);
   } catch (error) {
-    return NextResponse.json({ error: 'Failed to fetch categories' }, { status: 500 });
+    console.error("GET /api/categories error:", error);
+    return NextResponse.json(
+      { error: "Failed to fetch categories" },
+      { status: 500 },
+    );
   }
 }
