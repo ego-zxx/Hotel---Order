@@ -586,7 +586,7 @@ export default function GuestOrderingApp() {
                                 {item.name}
                               </h3>
                               <span className="font-sans text-base font-bold text-indigo-600 dark:text-indigo-400 shrink-0">
-                                ${item.price.toFixed(2)}
+                                Rs.{item.price.toFixed(2)}
                               </span>
                             </div>
                             <p className="text-slate-500 dark:text-slate-400 text-xs leading-relaxed line-clamp-3">
@@ -647,7 +647,7 @@ export default function GuestOrderingApp() {
 
                       <div className="flex items-center gap-2">
                         <span className="font-sans text-base font-bold text-indigo-200">
-                          ${cartTotals.total.toFixed(2)}
+                          Rs.{cartTotals.total.toFixed(2)}
                         </span>
                         <ChevronRight size={18} className="text-slate-400" />
                       </div>
@@ -724,7 +724,7 @@ export default function GuestOrderingApp() {
                                   {item.name}
                                 </h4>
                                 <span className="text-sm font-bold font-sans text-indigo-600 dark:text-indigo-400">
-                                  ${(item.price * quantity).toFixed(2)}
+                                  Rs.{(item.price * quantity).toFixed(2)}
                                 </span>
                               </div>
                               <p className="text-slate-400 text-[10px] mt-0.5 uppercase tracking-wider font-semibold">
@@ -778,7 +778,7 @@ export default function GuestOrderingApp() {
                         <div className="space-y-2 text-xs">
                           <div className="flex justify-between text-slate-500">
                             <span>Room Service Subtotal</span>
-                            <span>${cartTotals.subtotal.toFixed(2)}</span>
+                            <span>Rs.{cartTotals.subtotal.toFixed(2)}</span>
                           </div>
                           <div className="flex justify-between text-slate-500">
                             <span>Delivery to Suite</span>
@@ -795,7 +795,7 @@ export default function GuestOrderingApp() {
                           <div className="border-t border-slate-150 dark:border-slate-800 pt-3 flex justify-between font-sans text-base font-bold text-slate-900 dark:text-white">
                             <span>Total Due</span>
                             <span className="text-indigo-600 dark:text-indigo-400 font-bold">
-                              ${cartTotals.total.toFixed(2)}
+                              Rs.{cartTotals.total.toFixed(2)}
                             </span>
                           </div>
                         </div>
@@ -903,7 +903,7 @@ export default function GuestOrderingApp() {
                               </span>
                             </div>
                             <span className="font-bold font-sans">
-                              ${(item.price * quantity).toFixed(2)}
+                              Rs.{(item.price * quantity).toFixed(2)}
                             </span>
                           </div>
                         ))}
@@ -926,7 +926,7 @@ export default function GuestOrderingApp() {
                     <div className="border-t border-slate-150 dark:border-slate-800 pt-4 flex justify-between font-sans text-base font-bold text-slate-900 dark:text-white items-baseline">
                       <span>Total Invoice</span>
                       <span className="text-indigo-600 dark:text-indigo-455 text-2xl font-bold">
-                        ${cartTotals.total.toFixed(2)}
+                        Rs.{cartTotals.total.toFixed(2)}
                       </span>
                     </div>
                   </div>
@@ -1114,7 +1114,7 @@ export default function GuestOrderingApp() {
                             Order Synopsis
                           </p>
                           <span className="font-sans font-bold text-indigo-600 dark:text-indigo-400">
-                            ${trackingOrder.total.toFixed(2)}
+                            Rs.{trackingOrder.total.toFixed(2)}
                           </span>
                         </div>
                         <div className="space-y-1 text-slate-500 dark:text-slate-400 max-h-[100px] overflow-y-auto pr-1">
@@ -1127,7 +1127,7 @@ export default function GuestOrderingApp() {
                                 {item.quantity}x {item.name}
                               </span>
                               <span className="font-sans font-bold text-slate-600 dark:text-slate-350">
-                                ${(item.price * item.quantity).toFixed(2)}
+                                Rs.{(item.price * item.quantity).toFixed(2)}
                               </span>
                             </div>
                           ))}
