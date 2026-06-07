@@ -1,11 +1,11 @@
 import mysql from "mysql2/promise";
 
 const pool = mysql.createPool({
-  host: process.env.DB_HOST || "localhost",
-  port: parseInt(process.env.DB_PORT || "3306"),
-  user: process.env.DB_USER || "root",
-  password: "root",
-  database: process.env.DB_NAME || "hotel_ordering",
+  host:"gateway01.ap-southeast-1.prod.alicloud.tidbcloud.com",
+  port: parseInt("4000"),
+  user: "42ozeHBxPnrXopQ.root",
+  password: "6M3sQetP34KH35bl",
+  database: "hotel_ordering",
   waitForConnections: true,
   connectionLimit: 10,
   queueLimit: 0,
